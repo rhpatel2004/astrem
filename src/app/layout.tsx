@@ -43,6 +43,31 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${geistSans.variable} h-full antialiased`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              name: "Astrem Pipe - Mortex Polymers",
+              description: "Trusted PVC pipe manufacturer with 25+ years of experience in Surat, Gujarat.",
+              url: "https://astrempipe.com",
+              telephone: "+919913761276",
+              email: "mortexpolymers@gmail.com",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "Plot 61, 62, Umiya Ind. Estate, Near Kavya Mill, Jolwa Gam Road",
+                addressLocality: "Surat",
+                addressRegion: "Gujarat",
+                postalCode: "394305",
+                addressCountry: "IN",
+              },
+              image: "/astrem-logo.jpeg",
+            }),
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col font-sans">
         <Header />
         <main className="flex-1">{children}</main>

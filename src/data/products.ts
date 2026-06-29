@@ -3,9 +3,12 @@ export interface Product {
   name: string;
   shortDescription: string;
   fullDescription: string;
+  material: string;
   features: { title: string; description: string }[];
   applications: string[];
-  specs: { label: string; value: string }[];
+  sizes: string[];
+  colorOptions?: string[];
+  customSizing?: string;
 }
 
 export const products: Product[] = [
@@ -27,11 +30,35 @@ export const products: Product[] = [
       "DIY play structures",
       "Event tent frameworks",
     ],
-    specs: [
-      { label: "Material", value: "PVC" },
-      { label: "Color", value: "White" },
-      { label: "Sizes", value: "Available in multiple sizes" },
+    material: "PVC",
+    sizes: ["11mm Outer Diameter", "13mm Outer Diameter"],
+    colorOptions: ["White", "Black"],
+    customSizing:
+      "We offer custom length cutting for tent pipe orders. If your tent design requires specific pipe lengths, we can cut pipes to your exact measurements. Ideal for tent manufacturers and bulk buyers with unique frame dimensions.",
+  },
+  {
+    slug: "rack-pipe",
+    name: "Rack Pipe",
+    shortDescription: "Sturdy PVC pipes for shoe racks, display stands, and storage solutions.",
+    fullDescription:
+      "Astrem Rack Pipes are purpose-built PVC pipes designed for assembling shoe racks, display stands, storage shelves, and other household or commercial organizing structures. These pipes offer excellent load-bearing capacity with a clean white finish, making them ideal for building neat and durable rack systems.",
+    features: [
+      { title: "Load Bearing", description: "Strong enough to hold heavy items on racks" },
+      { title: "Clean Finish", description: "Smooth white surface for a polished look" },
+      { title: "Versatile", description: "Suitable for various rack and stand designs" },
+      { title: "Easy to Cut", description: "Can be cut to custom lengths easily" },
     ],
+    applications: [
+      "Shoe racks",
+      "Display stands",
+      "Storage shelves",
+      "Wardrobe organizers",
+    ],
+    material: "PVC",
+    sizes: ["12mm Outer Diameter", "13mm Outer Diameter", "19mm Outer Diameter"],
+    colorOptions: ["White", "Black"],
+    customSizing:
+      "Custom length cutting available on request. Whether you need pipes for a specific rack design or display stand, we can cut to your exact length requirements.",
   },
   {
     slug: "plumbing-pipe",
@@ -51,11 +78,8 @@ export const products: Product[] = [
       "Drainage systems",
       "Agricultural irrigation",
     ],
-    specs: [
-      { label: "Material", value: "uPVC" },
-      { label: "Color", value: "White" },
-      { label: "Sizes", value: "Available in multiple sizes" },
-    ],
+    material: "uPVC",
+    sizes: ["1/2 Inch", "3/4 Inch", "1 Inch"],
   },
   {
     slug: "conduit-pipe",
@@ -75,18 +99,15 @@ export const products: Product[] = [
       "Industrial cable management",
       "Underground cable protection",
     ],
-    specs: [
-      { label: "Material", value: "PVC" },
-      { label: "Color", value: "White" },
-      { label: "Sizes", value: "Available in multiple sizes" },
-    ],
+    material: "PVC",
+    sizes: ["19mm", "20mm", "25mm"],
   },
   {
     slug: "casing-capping-pipe",
-    name: "Casing Capping Pipe",
+    name: "Casing Capping",
     shortDescription: "PVC casing and capping systems for neat, concealed surface wiring.",
     fullDescription:
-      "Astrem Casing Capping Pipes offer a clean and professional solution for surface-mounted electrical wiring. The two-part casing and capping system allows easy installation and future maintenance access while keeping wires neatly concealed and protected along walls and ceilings.",
+      "Astrem Casing Capping offers a clean and professional solution for surface-mounted electrical wiring. The two-part casing and capping system allows easy installation and future maintenance access while keeping wires neatly concealed and protected along walls and ceilings.",
     features: [
       { title: "Neat Finish", description: "Clean, professional look for surface wiring" },
       { title: "Easy Access", description: "Snap-on capping for simple maintenance" },
@@ -99,11 +120,8 @@ export const products: Product[] = [
       "Renovation and retrofit projects",
       "Ceiling wire management",
     ],
-    specs: [
-      { label: "Material", value: "PVC" },
-      { label: "Color", value: "White" },
-      { label: "Sizes", value: "Available in multiple sizes" },
-    ],
+    material: "PVC",
+    sizes: ["25 x 32mm"],
   },
 ];
 

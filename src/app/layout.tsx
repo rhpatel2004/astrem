@@ -63,7 +63,7 @@ export default function RootLayout({
                 postalCode: "394305",
                 addressCountry: "IN",
               },
-              image: "/astrem-logo.jpeg",
+              image: "/astream-logo-cropped.png",
             }),
           }}
         />

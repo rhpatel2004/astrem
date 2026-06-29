@@ -5,9 +5,10 @@ import { BUSINESS } from "@/lib/constants";
 
 const productOptions = [
   "Kids Tent Pipe",
+  "Rack Pipe",
   "Plumbing Pipe",
   "Conduit Pipe",
-  "Casing Capping Pipe",
+  "Casing Capping",
   "Other",
 ];
 

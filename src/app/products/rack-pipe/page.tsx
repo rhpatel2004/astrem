@@ -4,14 +4,14 @@ import { getProductBySlug } from "@/data/products";
 import CTABanner from "@/components/CTABanner";
 import ScrollReveal from "@/components/ScrollReveal";
 
-const product = getProductBySlug("casing-capping-pipe")!;
+const product = getProductBySlug("rack-pipe")!;
 
 export const metadata: Metadata = {
   title: product.name,
   description: product.fullDescription.slice(0, 160),
 };
 
-export default function CasingCappingPipePage() {
+export default function RackPipePage() {
   return (
     <>
       {/* Hero Image */}

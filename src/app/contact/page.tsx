@@ -152,14 +152,14 @@ export default function ContactPage() {
                 <h3 className="text-lg font-semibold text-black">Find Us</h3>
                 <div className="mt-3 overflow-hidden rounded-xl border border-gray-200">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.7!2d72.83!3d21.19!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDExJzI0LjAiTiA3MsKwNDknNDguMCJF!5e0!3m2!1sen!2sin!4v1"
+                    src="https://maps.google.com/maps?q=21.166298,73.002892&z=17&output=embed"
                     width="100%"
                     height="250"
                     style={{ border: 0 }}
                     allowFullScreen
                     loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="Astrem Pipe location map"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    title="Astrem Pipe - Umiya Ind. Estate, Jolwa, Surat"
                   />
                 </div>
               </div>

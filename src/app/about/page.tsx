@@ -21,32 +21,15 @@ export default function AboutPage() {
             <div>
               <h1 className="text-4xl sm:text-5xl font-bold">About Astrem Pipe</h1>
               <p className="mt-6 text-gray-600 leading-relaxed">
-                <strong className="text-black">{BUSINESS.brandName}</strong> is a trusted brand of{" "}
-                <strong className="text-black">{BUSINESS.companyName}</strong>, a PVC pipe
-                manufacturing company with over{" "}
-                <strong className="text-black">25 years of experience</strong> in the industry.
+                <strong className="text-black">{BUSINESS.brandName}</strong> is a brand of{" "}
+                <strong className="text-black">{BUSINESS.companyName}</strong> — a PVC pipe manufacturer with over{" "}
+                <strong className="text-black">25 years of experience</strong>, based in Surat, Gujarat.
               </p>
               <p className="mt-4 text-gray-600 leading-relaxed">
-                Established in <strong className="text-black">Surat, Gujarat</strong>, we have grown
-                from a modest manufacturing unit to a well-recognized name in the PVC pipe market.
-                Our state-of-the-art facility in{" "}
-                <strong className="text-black">Jolwa</strong> produces a wide range of pipes — from
-                plumbing and electrical conduit to specialized kids tent pipes and casing capping
-                solutions.
+                From our facility in Jolwa, we manufacture pipes for plumbing, electrical conduit, kids tent structures, and casing capping — serving contractors, retailers, and homeowners across India.
               </p>
               <p className="mt-4 text-gray-600 leading-relaxed">
-                At Astrem, <strong className="text-black">quality is not just a promise</strong> —
-                it&apos;s our foundation. Every pipe we manufacture undergoes rigorous quality checks
-                to ensure it meets the highest standards. Our commitment to{" "}
-                <strong className="text-black">
-                  innovation, durability, and customer satisfaction
-                </strong>{" "}
-                has earned us the trust of thousands of clients across India.
-              </p>
-              <p className="mt-4 text-gray-600 leading-relaxed">
-                Whether you&apos;re a contractor, retailer, or homeowner,{" "}
-                <strong className="text-black">Astrem Pipes</strong> deliver the reliability you
-                need for every project.
+                Every Astrem pipe undergoes rigorous quality checks. Quality isn&apos;t just a promise — it&apos;s our foundation.
               </p>
             </div>
 
@@ -77,7 +60,7 @@ export default function AboutPage() {
         <section className="bg-black px-4 py-14 sm:px-6">
           <div className="max-w-5xl mx-auto grid grid-cols-2 gap-8 sm:gap-10 lg:grid-cols-4">
             <StatCounter end={25} suffix="+" label="Years Experience" dark />
-            <StatCounter end={4} label="Product Lines" dark />
+            <StatCounter end={5} label="Product Lines" dark />
             <StatCounter end={1000} suffix="+" label="Happy Clients" dark />
             <StatCounter end={50} suffix="+" label="Cities Served" dark />
           </div>

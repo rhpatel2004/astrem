@@ -4,28 +4,28 @@ import { BUSINESS } from "@/lib/constants";
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white">
-      <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid gap-8 md:grid-cols-3">
-          {/* Col 1: Brand */}
-          <div className="flex flex-col gap-3">
-            <div className="flex items-center gap-3">
-              <Image
-                src="/astrem-logo.jpeg"
-                alt="Astrem logo"
-                width={48}
-                height={48}
-                className="rounded-full object-cover brightness-0 invert"
-              />
-              <span className="text-xl font-bold tracking-tight">ASTREM PIPE</span>
-            </div>
-            <p className="text-sm text-gray-400">A product of {BUSINESS.companyName}</p>
-            <p className="text-sm text-gray-300 leading-relaxed">
-              {BUSINESS.tagline} — delivering quality PVC pipes across India.
-            </p>
-          </div>
+    <footer className="border-t border-gray-800 bg-black text-white">
+      <div className="max-w-7xl mx-auto px-4 py-14 sm:px-6 lg:px-8">
+        {/* Brand — always full width */}
+        <div className="flex flex-col gap-2">
+          <Image
+            src="/astrem-logo-footer.png"
+            alt="Astrem Pipe Logo"
+            width={160}
+            height={64}
+            className="object-contain brightness-0 invert"
+          />
+          <p className="text-sm text-gray-400">
+            A product of {BUSINESS.companyName}
+          </p>
+          <p className="text-sm text-gray-400 leading-relaxed">
+            Delivering quality PVC pipes across India since 25+ years.
+          </p>
+        </div>
 
-          {/* Col 2: Quick Links */}
+        {/* Links + Contact grid */}
+        <div className="mt-10 grid grid-cols-2 gap-8 lg:grid-cols-4 lg:gap-16">
+          {/* Quick Links */}
           <div>
             <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-gray-400">
               Quick Links
@@ -34,10 +34,6 @@ export default function Footer() {
               {[
                 { href: "/", label: "Home" },
                 { href: "/products", label: "Products" },
-                { href: "/products/kids-tent-pipe", label: "Kids Tent Pipe" },
-                { href: "/products/plumbing-pipe", label: "Plumbing Pipe" },
-                { href: "/products/conduit-pipe", label: "Conduit Pipe" },
-                { href: "/products/casing-capping-pipe", label: "Casing Capping Pipe" },
                 { href: "/about", label: "About Us" },
                 { href: "/contact", label: "Contact Us" },
               ].map((link) => (
@@ -53,8 +49,36 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Col 3: Contact */}
+          {/* Col 3: Our Products */}
           <div>
+            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-gray-400">
+              Our Products
+            </h3>
+            <ul className="flex flex-col gap-2">
+              {[
+                { href: "/products/kids-tent-pipe", label: "Kids Tent Pipe" },
+                { href: "/products/rack-pipe", label: "Rack Pipe" },
+                { href: "/products/plumbing-pipe", label: "Plumbing Pipe" },
+                { href: "/products/conduit-pipe", label: "Conduit Pipe" },
+                {
+                  href: "/products/casing-capping-pipe",
+                  label: "Casing Capping",
+                },
+              ].map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-gray-300 hover:text-white transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact — full width on mobile, in grid on desktop */}
+          <div className="col-span-2 lg:col-span-1">
             <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-gray-400">
               Contact Us
             </h3>
@@ -81,7 +105,9 @@ export default function Footer() {
                     />
                   </svg>
                 </span>
-                <span className="text-sm text-gray-300 leading-relaxed">{BUSINESS.address}</span>
+                <span className="text-sm text-gray-300 leading-relaxed">
+                  {BUSINESS.address}
+                </span>
               </li>
 
               {/* Phone */}
@@ -139,7 +165,8 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-10 border-t border-gray-800 pt-6 text-center text-sm text-gray-500">
-          &copy; {new Date().getFullYear()} {BUSINESS.companyName}. All rights reserved.
+          &copy; {new Date().getFullYear()} {BUSINESS.companyName}. All rights
+          reserved.
         </div>
       </div>
     </footer>

@@ -41,29 +41,71 @@ export default function PlumbingPipePage() {
         </div>
       </section>
 
-      {/* Specs Table */}
+      {/* Sizes & Details */}
       <ScrollReveal>
         <section className="bg-gray-50 px-4 py-12 sm:px-6">
           <div className="mx-auto max-w-4xl">
-            <h2 className="text-2xl font-bold text-black">Specifications</h2>
-            <div className="mt-6 overflow-x-auto">
-              <table className="w-full border-collapse text-left text-sm">
-                <thead>
-                  <tr className="border-b-2 border-black">
-                    <th className="py-3 pr-6 font-semibold">Specification</th>
-                    <th className="py-3 font-semibold">Details</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {product.specs.map((spec) => (
-                    <tr key={spec.label} className="border-b border-gray-200">
-                      <td className="py-3 pr-6 font-medium text-black">{spec.label}</td>
-                      <td className="py-3 text-gray-600">{spec.value}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <h2 className="text-2xl font-bold text-black">Available Sizes</h2>
+
+            <div className="mt-6 flex flex-wrap gap-3">
+              {product.sizes.map((size) => (
+                <span
+                  key={size}
+                  className="rounded-full border-2 border-black px-5 py-2.5 text-sm font-semibold text-black"
+                >
+                  {size}
+                </span>
+              ))}
             </div>
+
+            {product.colorOptions && (
+              <div className="mt-8">
+                <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-500">
+                  Color Options
+                </h3>
+                <div className="mt-3 flex items-center gap-4">
+                  {product.colorOptions.map((color) => (
+                    <div key={color} className="flex items-center gap-2">
+                      <span
+                        className={`h-6 w-6 rounded-full border-2 ${
+                          color === "Black"
+                            ? "border-black bg-black"
+                            : "border-gray-300 bg-white"
+                        }`}
+                      />
+                      <span className="text-sm font-medium text-gray-700">{color}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <div className="mt-8 inline-flex items-center gap-2 rounded-lg bg-white border border-gray-200 px-4 py-2.5">
+              <span className="text-xs uppercase tracking-wider text-gray-500">Material</span>
+              <span className="text-sm font-semibold text-black">{product.material}</span>
+            </div>
+
+            {product.customSizing && (
+              <div className="mt-8 rounded-xl border-2 border-black bg-white p-6">
+                <div className="flex items-start gap-3">
+                  <svg className="mt-0.5 h-6 w-6 shrink-0 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L9.121 9.121m0 5.758a3 3 0 10-4.243 4.243 3 3 0 004.243-4.243zm0-5.758a3 3 0 10-4.243-4.243 3 3 0 004.243 4.243z" />
+                  </svg>
+                  <div>
+                    <h3 className="text-lg font-semibold text-black">Custom Length Cutting Available</h3>
+                    <p className="mt-1 text-sm leading-relaxed text-gray-600">{product.customSizing}</p>
+                    <a
+                      href={`https://wa.me/919913761276?text=Hi%2C%20I%20need%20custom%20size%20${encodeURIComponent(product.name)}.%20Please%20share%20details.`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-3 inline-flex items-center gap-2 rounded-full bg-black px-5 py-2 text-sm font-medium text-white hover:bg-gray-800 transition-colors"
+                    >
+                      Request Custom Size
+                    </a>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </section>
       </ScrollReveal>

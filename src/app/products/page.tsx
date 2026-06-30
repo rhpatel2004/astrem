@@ -30,7 +30,7 @@ export default function ProductsPage() {
                   name={product.name}
                   slug={product.slug}
                   description={product.shortDescription}
-                  large={true}
+                  mobileImage={product.image.mobile}
                 />
               </ScrollReveal>
             ))}

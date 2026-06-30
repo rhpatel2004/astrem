@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { getProductBySlug } from "@/data/products";
 import CTABanner from "@/components/CTABanner";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -15,14 +16,13 @@ export default function PlumbingPipePage() {
   return (
     <>
       {/* Hero Image */}
-      <section className="bg-gray-100">
-        <div className="mx-auto flex max-w-7xl items-center justify-center px-4 py-20 sm:py-28">
-          <div className="text-center text-gray-400">
-            <svg className="mx-auto h-24 w-24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-            <p className="mt-2 text-sm">Product Image — {product.name}</p>
-          </div>
+      <section className="relative bg-white">
+        <div className="relative mx-auto max-w-7xl">
+          <Image src={product.image.mobile} alt={product.name} width={800} height={800} className="block w-full object-contain sm:hidden" priority />
+          <Image src={product.image.desktop} alt={product.name} width={1400} height={500} className="hidden w-full object-contain sm:block" priority />
+          <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-24 bg-gradient-to-r from-white to-transparent sm:block" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-24 bg-gradient-to-l from-white to-transparent sm:block" />
         </div>
       </section>
 
@@ -86,24 +86,22 @@ export default function PlumbingPipePage() {
             </div>
 
             {product.customSizing && (
-              <div className="mt-8 rounded-xl border-2 border-black bg-white p-6">
-                <div className="flex items-start gap-3">
-                  <svg className="mt-0.5 h-6 w-6 shrink-0 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="mt-8 rounded-lg border border-gray-200 bg-gray-50 px-5 py-4">
+                <div className="flex items-center gap-2">
+                  <svg className="h-4 w-4 shrink-0 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L9.121 9.121m0 5.758a3 3 0 10-4.243 4.243 3 3 0 004.243-4.243zm0-5.758a3 3 0 10-4.243-4.243 3 3 0 004.243 4.243z" />
                   </svg>
-                  <div>
-                    <h3 className="text-lg font-semibold text-black">Custom Length Cutting Available</h3>
-                    <p className="mt-1 text-sm leading-relaxed text-gray-600">{product.customSizing}</p>
-                    <a
-                      href={`https://wa.me/919913761276?text=Hi%2C%20I%20need%20custom%20size%20${encodeURIComponent(product.name)}.%20Please%20share%20details.`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-3 inline-flex items-center gap-2 rounded-full bg-black px-5 py-2 text-sm font-medium text-white hover:bg-gray-800 transition-colors"
-                    >
-                      Request Custom Size
-                    </a>
-                  </div>
+                  <h3 className="text-sm font-semibold text-black">Custom Length Cutting Available</h3>
                 </div>
+                <p className="mt-1.5 text-sm text-gray-500">{product.customSizing}</p>
+                <a
+                  href={`https://wa.me/919913761276?text=Hi%2C%20I%20need%20custom%20size%20${encodeURIComponent(product.name)}.%20Please%20share%20details.`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-flex text-sm font-medium text-black underline underline-offset-4 hover:text-gray-600 transition-colors"
+                >
+                  Request Custom Size &rarr;
+                </a>
               </div>
             )}
           </div>

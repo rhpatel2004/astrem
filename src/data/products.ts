@@ -9,11 +9,13 @@ export interface Product {
   sizes: string[];
   colorOptions?: string[];
   customSizing?: string;
+  image: { desktop: string; mobile: string };
 }
 
 export const products: Product[] = [
   {
     slug: "kids-tent-pipe",
+    image: { desktop: "/images/tent-desktop.jpeg", mobile: "/images/tent-mobile.jpeg" },
     name: "Kids Tent Pipe",
     shortDescription: "Lightweight PVC pipes designed for children's tent and play structures.",
     fullDescription:
@@ -38,6 +40,7 @@ export const products: Product[] = [
   },
   {
     slug: "rack-pipe",
+    image: { desktop: "/images/rack-desktop.jpeg", mobile: "/images/rack-mobile.jpeg" },
     name: "Rack Pipe",
     shortDescription: "Sturdy PVC pipes for shoe racks, display stands, and storage solutions.",
     fullDescription:
@@ -62,6 +65,7 @@ export const products: Product[] = [
   },
   {
     slug: "plumbing-pipe",
+    image: { desktop: "/images/plumbing-desktop.jpeg", mobile: "/images/plumbing-mobile.jpeg" },
     name: "Plumbing Pipe",
     shortDescription: "High-quality PVC plumbing pipes for residential and commercial water supply systems.",
     fullDescription:
@@ -83,6 +87,7 @@ export const products: Product[] = [
   },
   {
     slug: "conduit-pipe",
+    image: { desktop: "/images/conduit-desktop.jpeg", mobile: "/images/conduit_mobile.jpeg" },
     name: "Conduit Pipe",
     shortDescription: "Rigid PVC conduit pipes for safe electrical wiring and cable protection.",
     fullDescription:
@@ -104,6 +109,7 @@ export const products: Product[] = [
   },
   {
     slug: "casing-capping-pipe",
+    image: { desktop: "/images/casing-desktop.jpeg", mobile: "/images/casing-mobile.jpeg" },
     name: "Casing Capping",
     shortDescription: "PVC casing and capping systems for neat, concealed surface wiring.",
     fullDescription:
